@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Box from './Box';
+import uuid from 'uuid/v1';
 import './BoxContainer.css';
 
 class BoxContainer extends Component {
@@ -10,7 +11,7 @@ class BoxContainer extends Component {
 
   render() {
     const boxes = Array.from({ length: this.props.numBoxes }).map(() =>
-      <Box colors={this.props.allColors} />)
+      <Box key={uuid()} colors={this.props.allColors} />)
 
     return (
       <div className="BoxContainer">
